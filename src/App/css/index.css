@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "PlayfairDisplay-VariableFont";
+  src: url("../fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Muli";
+  src: url("../fonts/muli/Muli.ttf") format("truetype-variations");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:not(i) {
+  font-family: "Muli";
+}
+
+html body {
+  display: flex;
+  flex-direction: column;
+  font-size: 62.5%;
+}
+html body header {
+  width: 100%;
+  padding: 3rem 5rem;
+}
+html body header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+html body header nav a {
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+html body header nav a#logo {
+  color: #000000;
+  font-weight: 700;
+}
+html body header nav a#logo #logo-client {
+  width: 10ch;
+}
+html body header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+  padding: 10px;
+}
+html body header nav ul a {
+  color: #333;
+  font-weight: 600;
+  font-size: small;
+}
+html body header nav ul a:hover {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e89221;
+}
+html body header nav #ham-menu {
+  display: none;
+}
+html body header nav ul.active {
+  left: 0;
+}
+html body section#home-firstpart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: url("../img/img_e3malcuqbo75.png");
+  background-size: cover;
+  min-height: 100vh;
+}
+html body section#home-firstpart .home-firstpart-title, html body section#home-firstpart h1, html body section#home-firstpart h2 {
+  display: inline-flex;
+  padding: 10px;
+}
+html body section#home-firstpart .home-firstpart-title h1, html body section#home-firstpart h1 h1, html body section#home-firstpart h2 h1 {
+  position: relative;
+  background-color: #1a75bb;
+  font-size: large;
+}
+html body section#home-firstpart .home-firstpart-title h2, html body section#home-firstpart h1 h2, html body section#home-firstpart h2 h2 {
+  position: absolute;
+  background-color: #fff;
+  font-size: large;
+}
+html body section#home-firstpart form {
+  padding: 10px 10px 20px;
+  position: absolute;
+  bottom: -10px;
+  background-color: #e89221;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+html body section#home-firstpart form .inner-form {
+  display: inline-flex;
+}
+html body section#home-firstpart form .plus-search {
+  font-size: small;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: 56.25%;
+  }
+  html body header {
+    padding: 2.2rem 5rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+  html body header nav {
+    flex-direction: row;
+  }
+  html body header nav #ham-menu {
+    display: block;
+    color: #333;
+    font-size: 5.2rem;
+  }
+  html body header nav ul {
+    background-color: #fff;
+    position: fixed;
+    left: -100vw;
+    top: 100px;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s;
+    gap: 0;
+    z-index: 1;
+  }
+  html html body #home-firstpart form {
+    display: unset;
+  }
+}
+@media only screen and (max-width: 575px) {
+  html {
+    font-size: 46.87%;
+  }
+  html body header {
+    padding: 2rem 3rem;
+  }
+  html body header nav ul {
+    top: 80px;
+    height: calc(100vh - 80px);
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
