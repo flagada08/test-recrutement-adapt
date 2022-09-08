@@ -74,40 +74,69 @@ html body section#home-firstpart {
   flex-direction: column;
   justify-content: space-evenly;
   background: url("../img/img_e3malcuqbo75.png");
-  background-size: cover;
-  min-height: 100vh;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 html body section#home-firstpart .home-firstpart-title, html body section#home-firstpart h1, html body section#home-firstpart h2 {
-  display: inline-flex;
-  padding: 10px;
+  position: relative;
 }
 html body section#home-firstpart .home-firstpart-title h1, html body section#home-firstpart h1 h1, html body section#home-firstpart h2 h1 {
-  position: relative;
+  left: -73px;
+  bottom: 77px;
   background-color: #1a75bb;
   font-size: large;
+  color: #fff;
+  text-align: center;
+  padding: 15px 2px 10px 0px;
 }
 html body section#home-firstpart .home-firstpart-title h2, html body section#home-firstpart h1 h2, html body section#home-firstpart h2 h2 {
-  position: absolute;
+  font-family: "PlayfairDisplay-VariableFont";
+  left: 63px;
+  bottom: 83px;
   background-color: #fff;
-  font-size: large;
+  font-size: xx-large;
+  color: #e89221;
+  padding: 2px 15px 8px;
 }
 html body section#home-firstpart form {
-  padding: 10px 10px 20px;
+  padding: 15px 10px 30px 10px;
   position: absolute;
   bottom: -10px;
   background-color: #e89221;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  width: 875px;
 }
 html body section#home-firstpart form .inner-form {
   display: inline-flex;
 }
+html body section#home-firstpart form .inner-form .input-field {
+  margin-right: 30px;
+}
+html body section#home-firstpart form .inner-form .input-field .zero-wrap {
+  flex-grow: 1;
+}
+html body section#home-firstpart form .inner-form .input-field input {
+  height: 100%;
+  background: #fff;
+  border-radius: 0.5px;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  font-size: 18px;
+}
 html body section#home-firstpart form .plus-search {
-  font-size: small;
+  font-size: 1.2em;
   position: absolute;
-  bottom: 0px;
-  right: 10px;
+  bottom: 8px;
+  right: 50px;
+  color: #fff;
+  font-weight: bold;
+}
+html body section#home-firstpart form .btn-search {
+  width: 50px;
+  height: 50px;
 }
 
 @media only screen and (max-width: 991px) {
@@ -116,6 +145,13 @@ html body section#home-firstpart form .plus-search {
   }
   html body header {
     padding: 2.2rem 5rem;
+  }
+  html body section#home-firstpart form {
+    bottom: -150px;
+    width: auto;
+  }
+  html body section#home-firstpart form .inner-form {
+    display: block;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -145,7 +181,15 @@ html body section#home-firstpart form .plus-search {
     gap: 0;
     z-index: 1;
   }
-  html html body #home-firstpart form {
+  html body section#home-firstpart {
+    justify-content: unset;
+    background-size: auto;
+  }
+  html body section#home-firstpart .home-firstpart-title, html body section#home-firstpart h1, html body section#home-firstpart h2 {
+    position: unset;
+    padding: 15px;
+  }
+  html body section#home-firstpart form {
     display: unset;
   }
 }
