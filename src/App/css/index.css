@@ -73,8 +73,8 @@ html body section#home-firstpart {
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
-  background: url("../img/img_e3malcuqbo75.png");
-  height: 600px;
+  background-image: url("../img/img_e3malcuqbo75.png");
+  height: 800px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -101,20 +101,41 @@ html body section#home-firstpart .home-firstpart-title h2, html body section#hom
   padding: 2px 15px 8px;
 }
 html body section#home-firstpart form {
-  padding: 15px 10px 30px 10px;
+  padding: 10px 10px 20px 10px;
   position: absolute;
   bottom: -10px;
   background-color: #e89221;
-  width: 875px;
 }
 html body section#home-firstpart form .inner-form {
   display: inline-flex;
 }
 html body section#home-firstpart form .inner-form .input-field {
-  margin-right: 30px;
+  position: relative;
+  padding: 10px;
 }
-html body section#home-firstpart form .inner-form .input-field .zero-wrap {
-  flex-grow: 1;
+html body section#home-firstpart form .inner-form .input-field input#location {
+  width: 400px;
+}
+html body section#home-firstpart form .inner-form .input-field ::placeholder {
+  color: #000000;
+}
+html body section#home-firstpart form .inner-form .input-field .placeholder {
+  position: absolute;
+  pointer-events: none;
+  top: 20px;
+  left: 20px;
+  margin: auto;
+  font-size: large;
+  color: #000000;
+}
+html body section#home-firstpart form .inner-form .input-field .placeholder span {
+  color: #e89221;
+}
+html body section#home-firstpart form .inner-form .input-field input#location:valid + .placeholder {
+  display: none;
+}
+html body section#home-firstpart form .inner-form .input-field input#search-distance {
+  width: 100px;
 }
 html body section#home-firstpart form .inner-form .input-field input {
   height: 100%;
@@ -133,10 +154,20 @@ html body section#home-firstpart form .plus-search {
   right: 50px;
   color: #fff;
   font-weight: bold;
+  cursor: pointer;
 }
 html body section#home-firstpart form .btn-search {
+  border: none;
   width: 50px;
   height: 50px;
+  background: #1a75bb;
+  border-radius: 0.5px;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+html body section#home-firstpart form .btn-search .fa-solid, html body section#home-firstpart form .btn-search .fas {
+  font-size: xx-large;
 }
 
 @media only screen and (max-width: 991px) {
@@ -152,6 +183,15 @@ html body section#home-firstpart form .btn-search {
   }
   html body section#home-firstpart form .inner-form {
     display: block;
+  }
+  html body section#home-firstpart form .inner-form .input-field input#location {
+    width: auto;
+  }
+  html body section#home-firstpart form .inner-form .placeholder span {
+    display: none;
+  }
+  html body section#home-firstpart form .plus-search {
+    font-size: large;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -187,10 +227,7 @@ html body section#home-firstpart form .btn-search {
   }
   html body section#home-firstpart .home-firstpart-title, html body section#home-firstpart h1, html body section#home-firstpart h2 {
     position: unset;
-    padding: 15px;
-  }
-  html body section#home-firstpart form {
-    display: unset;
+    padding: 50px;
   }
 }
 @media only screen and (max-width: 575px) {
