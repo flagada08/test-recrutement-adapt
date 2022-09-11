@@ -10,46 +10,21 @@
     <meta name="author" content="terencePersin">
     <!-- titre -->
     <title>test-recrutement-adapt</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo-client.jpg">
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
     <!-- stylesheets -->
     <link rel="stylesheet" href="css/index.css">
+    <link href="css/buttonLoader.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#home" id="logo">
-                <img id="logo-client" src="img\logo-client.jpg" alt="Agence Démo">
-            </a>
-            <i class="fas fa-bars" id="ham-menu"></i>
-            <ul id="nav-bar">
-                <li>
-                    <a href="#offres">NOS OFFRES</a>
-                </li>
-                <li>
-                    <a href="#agence">L'AGENCE</a>
-                </li>
-                <li>
-                    <a href="#services">NOS SERVICES</a>
-                </li>
-                <li>
-                    <a href="#contact">CONTACT</a>
-                </li>
-                <li>
-                    <a href="#compte">MON COMPTE</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section id="home-firstpart">
+    <header-component></header-component>
+    <section id="home-firstpart" alt="salonblancvertcanardespritscandinave">
         <span class="home-firstpart-title">
             <h1>
                 VOTRE AGENCE
@@ -87,7 +62,57 @@
             </div>
         </form>            
     </section>
+    <section id="home-secondpart" alt="salonblancvertcanardespritscandinave">
+        <div class="home-secondpart-title">
+            <h1>
+                JE SOUHAITE
+            </h1>
+            <h2>
+                Acheter / Louer
+            </h2>
+            <button class="btn-offres" type="button">
+                <a class="btn has-spinner" href="offres.php">TOUTES NOS OFFRES</a>
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+        </div>
+    </section>
+    <footer-component></footer-component>
+    <!-- Script module header -->
+    <script type="module" src="./js/header.js"></script>
+    <script type="module" src="./js/footer.js"></script>
     <!-- Script -->
-    <script src="script.js"></script>
+    <script src="./js/search.js"></script>
+    <script>
+    (function ($) {
+        $.fn.buttonLoader = function (action) {
+            var self = $(this);
+            if (action == 'start') {
+                if ($(self).attr("disabled") == "disabled") {
+                    e.preventDefault();
+                }
+                $('.has-spinner').attr("disabled", "disabled");
+                $(self).attr('data-btn-text', $(self).text());
+                $(self).html('<span class="spinner"><i class="fa fa-spinner fa-spin"></i></span>Loading');
+                $(self).addClass('active');
+            }
+            if (action == 'stop') {
+                $(self).html($(self).attr('data-btn-text'));
+                $(self).removeClass('active');
+                $('.has-spinner').removeAttr("disabled");
+            }
+        }
+    })(jQuery);
+
+    $(document).ready(function () {
+        
+        $('.has-spinner').click(function () {
+            var btn = $(this);
+            $(btn).buttonLoader('start');
+            setTimeout(function () {
+                $(btn).buttonLoader('stop');
+            }, 3000);
+        });
+    });
+    </script>
 </body>
 </html>

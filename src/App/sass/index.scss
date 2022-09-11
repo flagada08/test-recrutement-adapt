@@ -37,7 +37,7 @@ html {
     font-size: 62.5%;
     header {
       width: 100%;
-      padding: 3rem 5rem;
+      padding: 3rem 5rem 1.5rem 5rem;
       nav {
         display: flex;
         justify-content: space-between;
@@ -59,6 +59,24 @@ html {
           display: flex;
           gap: 5rem;
           padding: 10px;
+          li .heart {
+            display: flex;
+            font-size: x-large;
+            cursor: pointer;
+            transition: all 0.5s;
+            position: relative;
+            span.counter {
+              font-size: small;
+              position: absolute;
+              left: 25px;
+              bottom: 5px;
+              background-color: $or-color;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              text-align: center;
+            }
+          }
           a {
             color: $ft-color;
             font-weight: 600;
@@ -83,7 +101,7 @@ html {
       align-items: center;
       flex-direction: column;
       justify-content: space-evenly;
-      background-image: url("../img/img_e3malcuqbo75.png");
+      background-image: url("../img/salonblancvertcanardespritscandinave.png");
       height: 800px;
       background-repeat: no-repeat;
       background-size: contain;
@@ -97,6 +115,7 @@ html {
           font-size: large;
           color: $bg-color;
           text-align: center;
+          letter-spacing : 3px;
           padding: 15px 2px 10px 0px;
         }
         h2 {
@@ -110,6 +129,7 @@ html {
         }
       }
       form {
+        z-index: 1;
         padding: 10px 10px 20px 10px;
         position: absolute;
         bottom: -10px;
@@ -173,22 +193,127 @@ html {
           font-size: 20px;
           color: $ft-color;
           cursor: pointer;
-          .fa-solid, .fas {
-          font-size: xx-large;
+          .fa-magnifying-glass {
+            font-size: xx-large;
           }
         }
+      }
+    }
+    section#home-secondpart {
+      position: relative;
+      margin: 10em 10% 10em 10%;
+      background-image: url("../img/salonmauveetbleuespritscandinave.png");
+      height: 500px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      .home-secondpart-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #fff;
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        left: 450px;
+        top: 50px;
+        h1 {
+          color: $or-color;
+          font-size: medium;
+          font-weight: bold;
+          letter-spacing : 3px;
+        }
+        h2 {
+          font-family: 'PlayfairDisplay-VariableFont';
+          color: $bl-color;
+          font-size: xx-large;
+          font-weight: bold;
+        }
+        .btn-offres {
+          display: flex;
+          align-items: center;
+          margin-top: 50px;
+          border: none;
+          padding: 20px 30px 20px 30px;
+          background: $bl-color;
+          border-radius: 0.5px;
+          font-size: small;
+          font-weight: bold;          
+          letter-spacing : 3px;
+          color: $bg-color;
+          cursor: pointer;
+          a {
+            text-decoration: none;
+            color: $bg-color;
+          }
+          .fa-arrow-right-long {
+            font-size: xx-large;
+            padding: 0px 0px 0px 10px;
+          }
+        }
+      }
+    }
+    .table {
+      margin: 25px 0px 50px 0px;
+      border:1px solid #C0C0C0;
+      border-collapse: collapse;
+      thead tr th {
+        border:1px solid #C0C0C0;
+        padding:5px;
+        background:#F0F0F0;
+      }
+      tbody tr td {
+        border:1px solid #C0C0C0;
+        padding:5px;
+      }
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: $bl-color;
+      width: 100%;
+      height: 400px;
+      font-size: large;
+      h1 {
+        color: $bg-color;
+      }
+      p {
+        color: $bg-color;
+      }
+      .btn-contact {
+        display: flex;
+        align-items: center;
+        border: none;
+        padding: 10px 15px 10px 15px;
+        background: $or-color;
+        border-radius: 0.5px;
+        font-size: small;
+        font-weight: bold;
+        letter-spacing: 3px;
+        color: $bg-color;
+        cursor: pointer;
+        i {
+          font-size: large;
+          padding: 0px 5px 0px 5px;
+        }
+      }
+      .social {
+        font-size: xx-large;
+        color: #fff;
       }
     }
   }
 }
 
-@media only screen and (max-width: 991px) {
+
+@media only screen and (max-width: 993px) {
   html {
     font-size: 56.25%;
-    body header {
-      padding: 2.2rem 5rem;
-    }
     body section#home-firstpart {
+      height: 600px;
       form {
         bottom: -150px;
         width: auto;
@@ -206,12 +331,27 @@ html {
         }
       }
     }
+    body section#home-secondpart {
+      margin: unset;
+      background-position: center;
+      .home-secondpart-title {
+        background-color: unset;
+        position: unset;
+        width: unset;
+        h1, h2 {
+          display: none;
+        }
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 767px) {
   html {
     font-size: 50%;
+    body header {
+      padding: 3rem 5rem 0rem 5rem;
+    }
    body header nav {
       flex-direction: row;
       #ham-menu {
@@ -232,7 +372,7 @@ html {
         justify-content: space-around;
         transition: 1s;
         gap: 0;
-        z-index: 1;
+        z-index: 2;
       }
     }
     body section#home-firstpart {
